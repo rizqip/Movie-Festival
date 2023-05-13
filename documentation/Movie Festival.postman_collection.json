@@ -1,0 +1,1547 @@
+{
+	"info": {
+		"_postman_id": "f5396e9a-9bfa-4720-b4ef-bd09f88c517e",
+		"name": "Movie Festival",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14834312"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "user1",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "user1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "user1",
+									"type": "text"
+								},
+								{
+									"key": "Type",
+									"value": "1",
+									"description": "1. User, 2. Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/access/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"access",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register User [Admin]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Name",
+											"value": "admin1",
+											"type": "text"
+										},
+										{
+											"key": "Email",
+											"value": "admin1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "Password",
+											"value": "admin1",
+											"type": "text"
+										},
+										{
+											"key": "Type",
+											"value": "2",
+											"description": "1. User, 2. Admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/access/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"access",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 03:26:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "164"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 400,\n    \"message\": \"You Account Already Register\",\n    \"data\": {\n        \"UserId\": 0,\n        \"Name\": \"admin1\",\n        \"Email\": \"admin1@gmail.com\",\n        \"Password\": \"admin1\",\n        \"Type\": 2,\n        \"Status\": 0\n    }\n}"
+						},
+						{
+							"name": "Register User [User]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Name",
+											"value": "user1",
+											"type": "text"
+										},
+										{
+											"key": "Email",
+											"value": "user1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "Password",
+											"value": "user1",
+											"type": "text"
+										},
+										{
+											"key": "Type",
+											"value": "1",
+											"description": "1. User, 2. Admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/access/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"access",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 03:30:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "225"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Create User Successfully\",\n    \"data\": {\n        \"CreatedAt\": \"2023-05-13 10:30:11\",\n        \"Email\": \"user1@gmail.com\",\n        \"Name\": \"user1\",\n        \"Password\": \"user1\",\n        \"Status\": 0,\n        \"Type\": 1,\n        \"UpdatedAt\": \"2023-05-13 10:30:11\",\n        \"UserId\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Email",
+									"value": "user1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "user1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/access/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"access",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login User [admin1]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Email",
+											"value": "admin1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "Password",
+											"value": "admin1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/access/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"access",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 03:31:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "272"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Login Success\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0\"\n}"
+						},
+						{
+							"name": "Login User [user1]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Email",
+											"value": "user1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "Password",
+											"value": "user1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/access/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"access",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:11:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "269"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Login Success\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/access/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"access",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout User [admin1]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/access/logout",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"access",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 03:33:14 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Log Out Success\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Create Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+								"description": "admin1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U",
+								"description": "user1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Title",
+									"value": "Movie 3",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "Ini Deskripsi",
+									"type": "text"
+								},
+								{
+									"key": "Duration",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "ArtisName",
+									"value": "[\"Selena Gomes\",\"Dominic\"]",
+									"type": "text"
+								},
+								{
+									"key": "GenreName",
+									"value": "[\"Action\"]",
+									"type": "text"
+								},
+								{
+									"key": "movie",
+									"type": "file",
+									"src": "/Users/rizqi/Documents/[Movieku.cc].HosOTDgn.1080p.WebDL/[Movieku.cc].HosOTDgn.Eps-10.1080p.WebDL.mkv"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/admin/movie",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"movie"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+										"description": "admin1",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U",
+										"description": "user1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Title",
+											"value": "Movie 3",
+											"type": "text"
+										},
+										{
+											"key": "Description",
+											"value": "Ini Deskripsi",
+											"type": "text"
+										},
+										{
+											"key": "Duration",
+											"value": "120",
+											"type": "text"
+										},
+										{
+											"key": "ArtisName",
+											"value": "[\"Selena Gomes\",\"Dominic\"]",
+											"type": "text"
+										},
+										{
+											"key": "GenreName",
+											"value": "[\"Action\"]",
+											"type": "text"
+										},
+										{
+											"key": "movie",
+											"type": "file",
+											"src": "/Users/rizqi/Downloads/suratmo.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/admin/movie",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"movie"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:12:08 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 400,\n    \"message\": \"Maaf Anda Bukan Admin\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Movie",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+								"description": "admin1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U",
+								"description": "user1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Title",
+									"value": "Movie 2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Description",
+									"value": "Ini Deskripsi",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Duration",
+									"value": "120",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ArtisName",
+									"value": "[\"Selena Gomes\",\"Dominic\"]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "GenreName",
+									"value": "[\"Action\",\"Horor\",\"Comedy\"]",
+									"type": "text"
+								},
+								{
+									"key": "movie",
+									"type": "file",
+									"src": "/Users/rizqi/Downloads/suratmo.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/admin/movie/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Movie",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+										"description": "admin1",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U",
+										"description": "user1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Title",
+											"value": "Movie 2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Description",
+											"value": "Ini Deskripsi",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Duration",
+											"value": "120",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "ArtisName",
+											"value": "[\"Selena Gomes\",\"Dominic\"]",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "GenreName",
+											"value": "[\"Action\",\"Horor\",\"Comedy\"]",
+											"type": "text"
+										},
+										{
+											"key": "movie",
+											"type": "file",
+											"src": "/Users/rizqi/Downloads/suratmo.png",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/admin/movie/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"movie",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:13:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 400,\n    \"message\": \"Maaf Anda Bukan Admin\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "List Movie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMjo0NiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.x1vsTYSeYMfn52qMQdrWElHk6_-Y9CbVv23HlRyGZZI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/api/v1/general/movie?search=fi",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"movie"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "fi"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Movie",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMjo0NiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.x1vsTYSeYMfn52qMQdrWElHk6_-Y9CbVv23HlRyGZZI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8090/api/v1/general/movie",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"general",
+										"movie"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:48:05 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Get List Movie Successfully\",\n    \"data\": {\n        \"list\": [\n            {\n                \"Description\": \"Ini Deskripsi\",\n                \"MovieId\": 1,\n                \"Title\": \"Movie 1\"\n            },\n            {\n                \"Description\": \"Ini Deskripsi\",\n                \"MovieId\": 2,\n                \"Title\": \"Movie 2\"\n            },\n            {\n                \"Description\": \"Ini Deskripsi\",\n                \"MovieId\": 3,\n                \"Title\": \"Movie 3\"\n            }\n        ],\n        \"total_items\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Detail Movie",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMjo0NiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.x1vsTYSeYMfn52qMQdrWElHk6_-Y9CbVv23HlRyGZZI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/general/movie/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"movie",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Detail Movie",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMjo0NiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.x1vsTYSeYMfn52qMQdrWElHk6_-Y9CbVv23HlRyGZZI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/general/movie/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"general",
+										"movie",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:47:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "446"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Get Detail Movie Successfully\",\n    \"data\": {\n        \"ArtistId\": \"[1,2]\",\n        \"ArtistName\": [\n            \"Selena Gomes\",\n            \"Dominic\"\n        ],\n        \"CreatedAt\": \"2023-05-13 10:41:17\",\n        \"CreatedBy\": 2,\n        \"Description\": \"Ini Deskripsi\",\n        \"Duration\": \"120\",\n        \"GenreId\": \"[1]\",\n        \"GenreName\": [\n            {\n                \"GenreId\": 1,\n                \"GenreName\": \"Action\",\n                \"ViewCount\": 10\n            }\n        ],\n        \"MovieId\": 2,\n        \"Title\": \"Movie 2\",\n        \"UpdatedAt\": \"2023-05-13 10:41:17\",\n        \"Url\": \"http://localhost:8090/api/v1/general/viewMovieRecord/2\",\n        \"ViewCount\": 8\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Record View Movie User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMjo0NiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.x1vsTYSeYMfn52qMQdrWElHk6_-Y9CbVv23HlRyGZZI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/general/view/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"view",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Record View Movie User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMjo0NiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.x1vsTYSeYMfn52qMQdrWElHk6_-Y9CbVv23HlRyGZZI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/general/view/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"general",
+										"view",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:47:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Add Record Successfully\",\n    \"data\": \"/Users/rizqi/Documents/Sites/Clone/Pribadi/Golang/Movie-Festival/suratmo.png\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Record Viewed Movie User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMjo0NiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.x1vsTYSeYMfn52qMQdrWElHk6_-Y9CbVv23HlRyGZZI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/general/view",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"view"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Record Viewed Movie User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMjo0NiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.x1vsTYSeYMfn52qMQdrWElHk6_-Y9CbVv23HlRyGZZI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/general/view",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"general",
+										"view"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:47:21 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Get Record Successfully\",\n    \"data\": [\n        {\n            \"CreatedAt\": \"2023-05-13 11:14:11\",\n            \"MovieId\": 2,\n            \"Title\": \"Movie 2\",\n            \"UserId\": 2\n        },\n        {\n            \"CreatedAt\": \"2023-05-13 11:18:10\",\n            \"MovieId\": 1,\n            \"Title\": \"Movie 1\",\n            \"UserId\": 2\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Most Viewed",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+								"description": "admin1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U",
+								"description": "user1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/api/v1/admin/view?Type=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"view"
+							],
+							"query": [
+								{
+									"key": "Type",
+									"value": "1",
+									"description": "1. Movie, 2. Genre"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Most Viewed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+										"description": "admin1",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U",
+										"description": "user1",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:8090/api/v1/admin/view?Type=1",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"view"
+									],
+									"query": [
+										{
+											"key": "Type",
+											"value": "1",
+											"description": "1. Movie, 2. Genre"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:46:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success Get Most Movie Viewed\",\n    \"data\": [\n        {\n            \"Title\": \"Movie 2\",\n            \"ViewCount\": 8\n        },\n        {\n            \"Title\": \"Movie 1\",\n            \"ViewCount\": 1\n        },\n        {\n            \"Title\": \"Movie 3\",\n            \"ViewCount\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Vote Movie",
+			"item": [
+				{
+					"name": "Vote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "MovieId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "Type",
+									"value": "1",
+									"description": "0. Unvote, 1. Vote",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/general/vote",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"vote"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "MovieId",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "Type",
+											"value": "1",
+											"description": "0. Unvote, 1. Vote",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/general/vote",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"general",
+										"vote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:48:25 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Vote Successfully\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "MovieId",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "Type",
+											"value": "0",
+											"description": "0. Unvote, 1. Vote",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/general/vote",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"general",
+										"vote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:48:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Unvote Successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Most Voted Movie",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+								"type": "text",
+								"description": "admin1"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U",
+								"description": "user1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8090/api/v1/admin/vote",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"vote"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Most Voted Movie",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJFeHBpcmVkIjoiMjAyMy0wNS0xMyAxMTozMTozNiIsIk5hbWUiOiJhZG1pbjEiLCJVc2VySWQiOjIsIlVzZXJUeXBlcyI6Mn0.OdHX9lRyMrGaf3RzU-c_CXyBjEQFcB94RLiWua9wLc0",
+										"type": "text",
+										"description": "admin1"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIkV4cGlyZWQiOiIyMDIzLTA1LTEzIDEyOjExOjMwIiwiTmFtZSI6InVzZXIxIiwiVXNlcklkIjoxLCJVc2VyVHlwZXMiOjF9.NyoDup-jkZhhwRbYaALDSQ-mQjpDPdNLrwaMqkPYB7U",
+										"description": "user1",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/admin/vote",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"vote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 May 2023 04:48:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Get Most Voted Successfully\",\n    \"data\": {\n        \"list\": [\n            {\n                \"ListUser\": [\n                    \"admin1\"\n                ],\n                \"MovieId\": 2,\n                \"Title\": \"Movie 2\",\n                \"VotedCount\": 2\n            }\n        ],\n        \"total_items\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
